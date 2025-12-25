@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle, hsl(203 50% 2%), hsl(203 50% 10%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 150vmin;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    place-items: center;
+    transform-style: preserve-3d;
+    animation: display-case 10s infinite linear;
+    position: relative;
+}
+
+li {
+    position: absolute;
+    width: 8vmin; 
+    height: 8vmin;
+    transform: translateY(var(--y)) rotateY(var(--r)) translateX(var(--x)) scale(var(--s));
+    transform-style: preserve-3d;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.texto-brillante {
+    font-size: 3vmin;
+    /* Efecto de resplandor neón */
+    text-shadow: 
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 20px currentColor;
+}
+
+@keyframes display-case {
+    to { transform: rotateY(1turn); }
+}
